@@ -67,7 +67,6 @@ export default class Spinner extends React.PureComponent {
     super(props);
     this.state = {
       visible: this.props.visible,
-      onDismiss: this.props.onDismiss,
       textContent: this.props.textContent
     };
   }
@@ -159,7 +158,7 @@ export default class Spinner extends React.PureComponent {
         supportedOrientations={['landscape', 'portrait']}
         transparent
         visible={this.state.visible}
-        onDismiss={this.state.onDismiss}
+        onDismiss={this.props.onDismiss ? this.props.onDismiss : () => {}}
       >
         {spinner}
       </Modal>
